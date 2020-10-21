@@ -1,23 +1,23 @@
 <?php 
-	session_start();
+	session_start(); //začínam php kod
 ?>
 
 <?php 
 	if(empty($_SESSION["jazyk"]))
 	{
-		$_SESSION["jazyk"]="sk";
+		$_SESSION["jazyk"]="sk"; //v SESSION vyrvarame hodnotu, ktoru neskor mozeme vyvolat kdekolvek v kode
 	}
 
-	if(!empty($_GET["jazyk"]))
+	if(!empty($_GET["jazyk"])) //GET
 	{
 		$_SESSION["jazyk"]=$_GET["jazyk"];
 	}
 	
-	var_dump($_SESSION["jazyk"]);
+	var_dump($_SESSION["jazyk"]); //var_dump vypisuje obsah casti kodu, sluzi na debagovanie ; pre GET zobrazi url-adresu ; SESSION, GET, dni,...
 
 	
 
-	echo "<br>";
+	echo "<br>";  //echo vyvolava
 	echo "<br>";
 ?>
 	
@@ -56,7 +56,7 @@ $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
   // output data of each row
-  while($row = mysqli_fetch_assoc($result)) {
+  while($row = mysqli_fetch_assoc($result)) { //z kazdeho jedneho riadku zo zdroja, v mojom pripade rozvrh, vypise do oblasti
     $rozvrh[$row["den"]][$row["hodina"]]=preloz($row["predmet"],$conn);
   }
 } else {
