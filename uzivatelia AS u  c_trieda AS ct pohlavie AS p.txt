@@ -1,0 +1,4 @@
+SELEct u.datum_narodenia, u.meno, u.priezvisko, u.id_pohlavie, p.idpohlavie, p.pohlavie, u.id_c_trieda, ct.idc_trieda, ct.nazovc_trieda
+FROM uzivatelia AS u
+LEFT JOIN pohlavie AS p ON p.idpohlavie = u.id_pohlavie
+LEFT JOIN c_trieda AS ct ON ct.idc_trieda = u.id_c_trieda
